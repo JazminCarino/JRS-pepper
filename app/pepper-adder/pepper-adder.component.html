@@ -1,0 +1,18 @@
+
+<form >
+    <label for="name">Name: </label>
+    <input type="text" id ="name" required [(ngModel)]= "pepper.name" name="name"><br><br>
+    <label for="color">Color: </label>
+    <select name="color" required [(ngModel)]="pepper.color" id="color">
+        <option disabled value="">Select A Color</option>
+        <option *ngFor= "let color of colors">{{color}}</option>
+    </select><br><br>
+    <label for="min">Min S.H.U: </label>
+    <input type="text" id="min" required [(ngModel)]= "pepper.shu.min" name="min"><br><br>
+    <label for="max">Max S.H.U: </label>
+    <input type="text" id="max" required [(ngModel)]= "pepper.shu.max" name="max"><br><br>
+    <input (click) = "submitPepper()" type="submit" value="Submit">
+  </form>
+
+  
+  

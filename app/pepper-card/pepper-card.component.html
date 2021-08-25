@@ -1,0 +1,45 @@
+<div>
+  <div *ngIf="!currentPepper">
+    <p>Select a Pepper</p>
+  </div>
+
+  <div *ngIf="currentPepper">
+    <form>
+      <label for="name">Name: {{ currentPepper.name }} </label>
+      <input
+        type="text"
+        id="name"
+        required
+        [(ngModel)]="currentPepper.name"
+        name="name"
+      /><br /><br />
+      <label for="color">Color: {{ currentPepper.color }} </label>
+      <select
+        name="color"
+        required
+        [(ngModel)]="currentPepper.color"
+        id="color"
+      >
+        <option disabled value="">Select A Color</option>
+        <option *ngFor="let color of colors">{{ color }}</option></select
+      ><br /><br />
+      <label for="min">Min S.H.U: {{ currentPepper.shu.min }} </label>
+      <input
+        type="text"
+        id="min"
+        required
+        [(ngModel)]="currentPepper.shu.min"
+        name="min"
+      /><br /><br />
+      <label for="max">Max S.H.U: {{ currentPepper.shu.max }} </label>
+      <input
+        type="text"
+        id="max"
+        required
+        [(ngModel)]="currentPepper.shu.max"
+        name="max"
+      /><br /><br />
+      <input (click)="updatePepper()" type="submit" value="Update" />
+    </form>
+  </div>
+</div>
